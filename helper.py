@@ -364,7 +364,7 @@ async def download_and_decrypt_pdf(url, name, key):
 
 #-----------------------Emoji handler------------------------------------
 
-EMOJIS = ["🔥", "💥", "👨‍❤️‍💋‍👨", "👱🏻", "👻", "⚡", "💫", "🐟", "🦅", "🌹", "🦋"]
+EMOJIS = ["🔥", "💥", "👱🏻", "👻", "⚡", "💫", "🐟", "🦅", "🌹", "🦋"]
 emoji_counter = 0  # Initialize a global counter
 
 def get_next_emoji():
@@ -377,10 +377,10 @@ def get_next_emoji():
 async def send_vid(bot: Client, m: Message,cc,filename,thumb,name,prog):   
        
     emoji = get_next_emoji()
-    subprocess.run(f'ffmpeg -i "{filename}" -ss 00:00:02 -vframes 1 "{filename}.jpg"', shell=True)   
+    subprocess.run(f'ffmpeg -i "{filename}" -ss 00:00:10 -vframes 1 "{filename}.jpg"', shell=True)   
     await prog.delete (True)   
     processing_msg = await m.reply_text(emoji) 
-    reply = await m.reply_text(f"**★彡 ᵘᵖˡᵒᵃᵈⁱⁿᵍ 彡★ ...⏳**\n\n📚𝐓𝐢𝐭𝐥𝐞 » `{name}`\n\n✦𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 𝐁𝐲 ✦ 𝙎𝘼𝙄𝙉𝙄 𝘽𝙊𝙏𝙎🦁")   
+    reply = await m.reply_text(f"<pre><code>Video Uploading</code></pre>\n{name}")   
     try:   
         if thumb == "no":   
             thumbnail = f"{filename}.jpg"   
