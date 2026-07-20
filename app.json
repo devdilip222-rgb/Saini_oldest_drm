@@ -1,24 +1,16 @@
 {
-    "name": "𝙎𝘼𝙄𝙉𝙄 𝘽𝙊𝙏𝙎",
+    "name": "drm",
     "description": "Download videos from various websites using this telegram bot",
-    "logo": "https://tinypic.host/images/2025/02/07/DeWatermark.ai_1738952933236-1.png",
+    "logo": "",
     "keywords": [
         "text-video",
         "video-extract",
         "pyrogram"
     ],
-    "repository": "https://github.com/nikhilsainiop/Drm-Uploader",
-    "success_url": "https://instagram.com/nikhil.saini.khe",
+    "repository": "",
+    "success_url": "",
     "stack": "container",
     "env": {
-        "API_ID": {
-            "description": "Enter your api id",
-            "required": true
-        },
-        "API_HASH": {
-            "description": "Enter your api hash",
-            "required": true
-        },
         "BOT_TOKEN": {
             "description": "Enter your bot token",
             "required": true
