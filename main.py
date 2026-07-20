@@ -163,24 +163,28 @@ async def id_command(client, message: Message):
 
 @bot.on_message(filters.command(["help"]))
 async def txt_handler(client: Client, m: Message):
-    await bot.send_message(m.chat.id, text= (
-        "🎉Congrats! You are using 『ᴀᴅᴍɪɴ』:\n┣\n"
-        "┣⪼01. Send /start - To Check Bot \n┣\n"
-        "┣⪼02. Send /drm - To extract.txt file 🗃️ \n┣\n"
-        "┣⪼03. Send /y2t - YouTube to .txt Convert\n┣\n"
-        "┣⪼04. Send /cookies - To update YT cookies.\n┣\n"
-        "┣⪼05. Send /doc- Pdf & jpg downloader\n┣\n"
-        "┣⪼06. Send /id - Your Telegram ID\n┣\n"
-        "┣⪼07. Send /info - Your Telegram Info\n┣\n"
-        "┣⪼08. Send /e2t - Txt in Alphabetically\n┣\n"
-        "┣⪼09. Send /t2t - Text to .txt Convert\n┣\n"
-        "┣⪼10. Send /title - Title Clean from Symbol\n┣\n"
-        "┣⪼11. Send /logs - To see Bot Working Logs\n┣\n"
-        "┣⪼12. Send /stop - Stop the Running Task. 🚫\n┣\n"
-        "┣⪼🔗  Direct Send Link For Extract (with https://)\n┣\n"
-        "If you have any questions, feel free to ask! 💬"
+    await bot.send_message(
+        m.chat.id,
+        text=(
+            "🎉 Welcome to 『ᴀᴅᴍɪɴ』 Bot!\n"
+            "━━━━━━━━━━━━━━━━━━━━━━\n"
+            "/start   - Check bot status\n"
+            "/drm     - Extract .txt file\n"
+            "/y2t     - YouTube to .txt\n"
+            "/cookies - Update YT cookies\n"
+            "/doc     - PDF/JPG downloader\n"
+            "/id      - Your Telegram ID\n"
+            "/info    - Your Telegram info\n"
+            "/e2t     - Alphabetical sort\n"
+            "/t2t     - Text to .txt convert\n"
+            "/title   - Clean title symbols\n"
+            "/logs    - View bot logs\n"
+            "/stop    - Stop running task 🚫\n"
+            "━━━━━━━━━━━━━━━━━━━━━━\n"
+            "🔗 Send link with https:// for extract\n"
+            "💬 Questions? Ask anytime!"
         )
-    ) 
+    )
 
     
 @bot.on_message(filters.command("cookies") & filters.private)
