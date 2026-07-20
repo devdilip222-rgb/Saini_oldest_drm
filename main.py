@@ -62,21 +62,12 @@ bot = Client("bot",
 keyboard = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton(text="📞 Contact", url="https://t.me/Nikhil_saini_khe"),
-            InlineKeyboardButton(text="🛠️ Help", url="https://t.me/+3k-1zcJxINYwNGZl"),
+            InlineKeyboardButton(text="📞 Contact", url="http://t.me/Devfff_bot"),
+            InlineKeyboardButton(text="🛠️ Help", url="http://t.me/Devfff_bot"),
         ],
     ]
 )
 
-# Inline keyboard for busy status
-Busy = InlineKeyboardMarkup(
-    [
-        [
-            InlineKeyboardButton(text="📞 Contact", url="https://t.me/Nikhil_saini_khe"),
-            InlineKeyboardButton(text="🛠️ Help", url="https://t.me/+3k-1zcJxINYwNGZl"),
-        ],
-    ]
-)
 
 # Image URLs for the random image feature
 image_urls = [
@@ -100,7 +91,7 @@ async def start_command(bot: Client, message: Message):
     # Caption for the image
     caption = (
         "🌟 Welcome Boss🦁! 🌟\n\n"
-        "➽ I am Powerful DRM Uploader Bot 📥\n\n➽ 𝐔𝐬𝐞 /help for use this Bot.\n\n➽ **ᴊᴏɪɴ ᴏᴜʀ <a href='https://t.me/+1e-r94cF6yE3NzA1'>__TG Channel__</a>**\n➽ **Add me in <a href='http://t.me/Mynkl_txt_bot?startchannel=true'>__Your Channel__</a>**\n➽ **Add me in <a href='http://t.me/Mynkl_txt_bot?startgroup=true'>__Your Group__</a>**\n\n<pre><code> 𝐌𝐚𝐝𝐞 𝐁𝐲 : 𝙎𝘼𝙄𝙉𝙄 𝘽𝙊𝙏𝙎 🦁</code></pre>"
+        "➽ I am Powerful DRM Uploader Bot 📥\n\n➽ 𝐔𝐬𝐞 /help for use this Bot.\n\n➽ **ᴊᴏɪɴ ᴏᴜʀ <a href='http://t.me/Devfff_bot'>__TG Channel__</a>**\n➽ **Add me in <a href='http://t.me/Devfff_bot?startchannel=true'>__Your Channel__</a>**\n➽ **Add me in <a href='http://t.me/Devfff_bot?startgroup=true'>__Your Group__</a>**\n\n<pre><code> 𝐌𝐚𝐝𝐞 𝐁𝐲 : 『ᴀᴅᴍɪɴ』 🦁</code></pre>"
     )
 
     await asyncio.sleep(1)
@@ -174,7 +165,7 @@ async def id_command(client, message: Message):
 @bot.on_message(filters.command(["help"]))
 async def txt_handler(client: Client, m: Message):
     await bot.send_message(m.chat.id, text= (
-        "🎉Congrats! You are using 𝙎𝘼𝙄𝙉𝙄 𝘽𝙊𝙏𝙎:\n┣\n"
+        "🎉Congrats! You are using 『ᴀᴅᴍɪɴ』:\n┣\n"
         "┣⪼01. Send /start - To Check Bot \n┣\n"
         "┣⪼02. Send /drm - To extract.txt file 🗃️ \n┣\n"
         "┣⪼03. Send /y2t - YouTube to .txt Convert\n┣\n"
@@ -531,10 +522,9 @@ async def account_login(bot: Client, m: Message):
 
     if file_name.endswith("_helper"):  # ✅ Check if filename ends with "_helper"
         x = decrypt_file_txt(y)  # Decrypt the file
-        await input.delete(True)
     else:
         x = y 
-
+    await input.delete(True)
     try:    
         with open(x, "r") as f:
             content = f.read()
@@ -558,18 +548,14 @@ async def account_login(bot: Client, m: Message):
     raw_text0 = input1.text
     await input1.delete(True)
     if raw_text0 == '1':
-        b_name = file_name
+        b_name = file_name.replace("_"," ")
     else:
         b_name = raw_text0
         
     await editable.edit(f"╭━━━━❰ᴇɴᴛᴇʀ ʀᴇꜱᴏʟᴜᴛɪᴏɴ❱━━➣\n"
-                        f"┣━━⪼ send `144`  for 144p\n"
-                        f"┣━━⪼ send `240`  for 240p\n"
-                        f"┣━━⪼ send `360`  for 360p\n"
-                        f"┣━━⪼ send `480`  for 480p\n"
-                        f"┣━━⪼ send `720`  for 720p\n"
-                        f"┣━━⪼ send `1080` for 1080p\n"
-                        f"╰━━⌈⚡[`🦋🇸‌🇦‌🇮‌🇳‌🇮‌🦋`]⚡⌋━━➣")
+                        f"┣━⪼ 144, 240, 360\n"
+                        f"┣━⪼ 480, 720, 1080\n"
+                        f"╰━━⌈⚡[`🦋『ᴀᴅᴍɪɴ』🦋`]⚡⌋━━➣")
     input2: Message = await bot.listen(editable.chat.id)
     raw_text2 = input2.text
     quality = f"{raw_text2}p"
@@ -597,9 +583,9 @@ async def account_login(bot: Client, m: Message):
     raw_text3 = input3.text
     await input3.delete(True)
     # Default credit message with link
-    credit = "️[𝙎𝘼𝙄𝙉𝙄 𝘽𝙊𝙏𝙎 🕊️](https://t.me/+MdZ2996M2G43MWFl)"
+    credit = "️[『ᴀᴅᴍɪɴ』 🕊️](http://t.me/Devfff_bot)"
     if raw_text3 == '1':
-        CR = '[𝙎𝘼𝙞𝙉𝙄 𝘽𝙊𝙏𝙎 🕊️](https://t.me/+MdZ2996M2G43MWFl)'
+        CR = '[『ᴀᴅᴍɪɴ』 🕊️](http://t.me/Devfff_bot)'
     elif raw_text3:
         try:
             text, link = raw_text3.split(',')
@@ -713,7 +699,7 @@ async def account_login(bot: Client, m: Message):
              #url = f"https://dl.alphacbse.site/download/{id}/master.m3u8"
             
             name1 = links[i][0].replace("\t", "").replace(":", "").replace("/", "").replace("+", "").replace("#", "").replace("|", "").replace("@", "").replace("*", "").replace(".", "").replace("https", "").replace("http", "").strip()                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
-            name = f'{name1[:60]} 𝙎𝘼𝙞𝙉𝙄 𝘽𝙊𝙏𝙎 🕊️'         
+            name = f'{name1[:60]} 『ᴀᴅᴍɪɴ』 🕊️'         
 
             if 'khansirvod4.pc.cdn.bitgravity.com' in url:                  
                 parts = url.split('/')               
@@ -766,12 +752,12 @@ async def account_login(bot: Client, m: Message):
                 cmd = f'yt-dlp -f "{ytf}" "{url}" -o "{name}.mp4"'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
             try:   
-                cc = f'**——— ✨ [{str(count).zfill(3)}]({link0}) ✨ ———**\n\n🎞️𝐓𝐢𝐭𝐥𝐞 » `{name1}`\n**├── 𝙴𝚡𝚝𝚎𝚗𝚜𝚒𝚘𝚗 »**  🇳‌🇮‌🇰‌🇭‌🇮‌🇱‌.mkv\n**├── 𝚁𝚎𝚜𝚘𝚕𝚞𝚝𝚒𝚘𝚗 »** `[{res}]`\n\n<pre><code>📚 Course » {b_name}</code></pre>\n\n🌟𝐄𝐱𝐭𝐫𝐚𝐜𝐭𝐞𝐝 𝐁𝐲 » {CR}\n'
-                cc1 = f'**——— ✨ [{str(count).zfill(3)}]({link0}) ✨ ———**\n\n📕𝐓𝐢𝐭𝐥𝐞 » `{name1}`\n**├── 𝙴𝚡𝚝𝚎𝚗𝚜𝚒𝚘𝚗 »**  🇸‌🇦‌🇮‌🇳‌🇮‌.pdf\n\n<pre><code>📚 Course » {b_name}</code></pre>\n\n🌟𝐄𝐱𝐭𝐫𝐚𝐜𝐭𝐞𝐝 𝐁𝐲 » {CR}\n'
-                cczip = f'**——— ✨ [{str(count).zfill(3)}]({link0}) ✨ ———**\n\n📁𝐓𝐢𝐭𝐥𝐞 » `{name1}`\n**├── 𝙴𝚡𝚝𝚎𝚗𝚜𝚒𝚘𝚗 »**  🇳‌🇮‌🇰‌🇭‌🇮‌🇱‌.zip\n\n<pre><code>📚 Course » {b_name}</code></pre>\n\n🌟𝐄𝐱𝐭𝐫𝐚𝐜𝐭𝐞𝐝 𝐁𝐲 » {CR}\n'
-                ccimg = f'**——— ✨ [{str(count).zfill(3)}]({link0}) ✨ ———**\n\n🖼️𝐓𝐢𝐭𝐥𝐞 » `{name1}`\n**├── 𝙴𝚡𝚝𝚎𝚗𝚜𝚒𝚘𝚗 »**  🇸‌🇦‌🇮‌🇳‌🇮‌.jpg\n\n<pre><code>📚 Course » {b_name}</code></pre>\n\n🌟𝐄𝐱𝐭𝐫𝐚𝐜𝐭𝐞𝐝 𝐁𝐲 » {CR}\n'
-                ccyt = f'**——— ✨ [{str(count).zfill(3)}]({link0}) ✨ ———**\n\n🎞️𝐓𝐢𝐭𝐥𝐞 » `{name1}`\n**├── 𝙴𝚡𝚝𝚎𝚗𝚜𝚒𝚘𝚗 »**  🇳‌🇮‌🇰‌🇭‌🇮‌🇱‌.mkv\n**├── Resolution :** `[{res}]`\n**├── Video link :** {url}\n\>📚 Course » {b_name}\n\n🌟𝐄𝐱𝐭𝐫𝐚𝐜𝐭𝐞𝐝 𝐁𝐲 » {CR}\n'
-                ccm = f'**——— ✨ [{str(count).zfill(3)}]({link0}) ✨ ———**\n\n🎞️🎵𝐢𝐭𝐥𝐞 » `{name1}`\n**├── 𝙴𝚡𝚝𝚎𝚗𝚜𝚒𝚘𝚗 »**  🇸‌🇦‌🇮‌🇳‌🇮‌.mp3\n\n<pre><code>📚 Course » {b_name}</code></pre>\n\n🌟𝐄𝐱𝐭𝐫𝐚𝐜𝐭𝐞𝐝 𝐁𝐲 » {CR}\n'
+                cc = f'**——— ✨ {str(count).zfill(3)} ✨ ———**\n\n🎞️𝐓𝐢𝐭𝐥𝐞 » `{name1}`\n**├── 𝙴𝚡𝚝𝚎𝚗𝚜𝚒𝚘𝚗 »**  『ᴀᴅᴍɪɴ』.mkv\n**├── 𝚁𝚎𝚜𝚘𝚕𝚞𝚝𝚒𝚘𝚗 »** `[{res}]`\n\n<pre><code>📚 Course » {b_name}</code></pre>\n\n🌟𝐄𝐱𝐭𝐫𝐚𝐜𝐭𝐞𝐝 𝐁𝐲 » {CR}\n'
+                cc1 = f'**——— ✨ {str(count).zfill(3)} ✨ ———**\n\n📕𝐓𝐢𝐭𝐥𝐞 » `{name1}`\n**├── 𝙴𝚡𝚝𝚎𝚗𝚜𝚒𝚘𝚗 »**  『ᴀᴅᴍɪɴ』.pdf\n\n<pre><code>📚 Course » {b_name}</code></pre>\n\n🌟𝐄𝐱𝐭𝐫𝐚𝐜𝐭𝐞𝐝 𝐁𝐲 » {CR}\n'
+                cczip = f'**——— ✨ {str(count).zfill(3)} ✨ ———**\n\n📁𝐓𝐢𝐭𝐥𝐞 » `{name1}`\n**├── 𝙴𝚡𝚝𝚎𝚗𝚜𝚒𝚘𝚗 »**  『ᴀᴅᴍɪɴ』.zip\n\n<pre><code>📚 Course » {b_name}</code></pre>\n\n🌟𝐄𝐱𝐭𝐫𝐚𝐜𝐭𝐞𝐝 𝐁𝐲 » {CR}\n'
+                ccimg = f'**——— ✨ {str(count).zfill(3)} ✨ ———**\n\n🖼️𝐓𝐢𝐭𝐥𝐞 » `{name1}`\n**├── 𝙴𝚡𝚝𝚎𝚗𝚜𝚒𝚘𝚗 »**  『ᴀᴅᴍɪɴ』.jpg\n\n<pre><code>📚 Course » {b_name}</code></pre>\n\n🌟𝐄𝐱𝐭𝐫𝐚𝐜𝐭𝐞𝐝 𝐁𝐲 » {CR}\n'
+                ccyt = f'**——— ✨ {str(count).zfill(3)} ✨ ———**\n\n🎞️𝐓𝐢𝐭𝐥𝐞 » `{name1}`\n**├── 𝙴𝚡𝚝𝚎𝚗𝚜𝚒𝚘𝚗 »**  『ᴀᴅᴍɪɴ』.mkv\n**├── Resolution :** `[{res}]`\n**├── Video link :** {url}\n\>📚 Course » {b_name}\n\n🌟𝐄𝐱𝐭𝐫𝐚𝐜𝐭𝐞𝐝 𝐁𝐲 » {CR}\n'
+                ccm = f'**——— ✨ {str(count).zfill(3)} ✨ ———**\n\n🎞️🎵𝐢𝐭𝐥𝐞 » `{name1}`\n**├── 𝙴𝚡𝚝𝚎𝚗𝚜𝚒𝚘𝚗 »**  『ᴀᴅᴍɪɴ』.mp3\n\n<pre><code>📚 Course » {b_name}</code></pre>\n\n🌟𝐄𝐱𝐭𝐫𝐚𝐜𝐭𝐞𝐝 𝐁𝐲 » {CR}\n'
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
                 if "drive" in url:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
                     try:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
@@ -917,18 +903,7 @@ async def account_login(bot: Client, m: Message):
                    remaining_links = len(links) - count
                    progress = (count / len(links)) * 100
                    emoji_message = await show_random_emojis(message)
-                   Show = f"🚀𝐏𝐑𝐎𝐆𝐑𝐄𝐒𝐒 » {progress:.2f}%\n┃\n" \
-                          f"┣🔗𝐈𝐧𝐝𝐞𝐱 » {str(count)}/{len(links)}\n┃\n" \
-                          f"╰━🖇️𝐑𝐞𝐦𝐚𝐢𝐧𝐢𝐧𝐠 𝐋𝐢𝐧𝐤𝐬 » {remaining_links}\n\n" \
-                          f"**⚡Dᴏᴡɴʟᴏᴀᴅ Sᴛᴀʀᴛᴇᴅ...⏳**\n┃\n" \
-                          f'┣💃𝐂𝐫𝐞𝐝𝐢𝐭 » {CR}\n┃\n' \
-                          f'╰━📚𝐁𝐚𝐭𝐜𝐡 𝐍𝐚𝐦𝐞 » `{b_name}`\n\n' \
-                          f"📔𝐓𝐢𝐭𝐥𝐞 » `{name}`\n┃\n" \
-                          f"┣🍁𝐐𝐮𝐚𝐥𝐢𝐭𝐲 » {quality}\n┃\n" \
-                          f'┣━🔗𝐋𝐢𝐧𝐤 » <a href="{url}">__**Click Here to Open Link**__</a>\n┃\n' \
-                          f'╰━━🖼️𝐓𝐡𝐮𝐦𝐛𝐧𝐚𝐢𝐥 » <a href="{raw_text6}">__**Thumb Link**__</a>\n\n' \
-                          f"➽ 𝐔𝐬𝐞 /stop for stop the Bot.\n\n" \
-                          f"➽ 𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 𝐁𝐲 ✦ `𝙎𝘼𝙄𝙉𝙄 𝘽𝙊𝙏𝙎🐦`"
+                   Show = f"<pre><code>Video Downloading | {progress:.2f}%</code></pre>\n{name}"
                    prog = await m.reply_text(Show, disable_web_page_preview=True)
                    res_file = await helper.download_and_decrypt_video(url, cmd, name, appxkey)  
                    filename = res_file  
@@ -943,18 +918,7 @@ async def account_login(bot: Client, m: Message):
                    remaining_links = len(links) - count
                    progress = (count / len(links)) * 100
                    emoji_message = await show_random_emojis(message)
-                   Show = f"🚀𝐏𝐑𝐎𝐆𝐑𝐄𝐒𝐒 » {progress:.2f}%\n┃\n" \
-                          f"┣🔗𝐈𝐧𝐝𝐞𝐱 » {str(count)}/{len(links)}\n┃\n" \
-                          f"╰━🖇️𝐑𝐞𝐦𝐚𝐢𝐧𝐢𝐧𝐠 𝐋𝐢𝐧𝐤𝐬 » {remaining_links}\n\n" \
-                          f"**⚡Dᴏᴡɴʟᴏᴀᴅ Sᴛᴀʀᴛᴇᴅ...⏳**\n┃\n" \
-                          f'┣💃𝐂𝐫𝐞𝐝𝐢𝐭 » {CR}\n┃\n' \
-                          f'╰━📚𝐁𝐚𝐭𝐜𝐡 𝐍𝐚𝐦𝐞 » `{b_name}`\n\n' \
-                          f"📔𝐓𝐢𝐭𝐥𝐞 » `{name}`\n┃\n" \
-                          f"┣🍁𝐐𝐮𝐚𝐥𝐢𝐭𝐲 » {quality}\n┃\n" \
-                          f'┣━🔗𝐋𝐢𝐧𝐤 » <a href="{url}">__**Click Here to Open Link**__</a>\n┃\n' \
-                          f'╰━━🖼️𝐓𝐡𝐮𝐦𝐛𝐧𝐚𝐢𝐥 » <a href="{raw_text6}">__**Thumb Link**__</a>\n\n' \
-                          f"➽ 𝐔𝐬𝐞 /stop for stop the Bot.\n\n" \
-                          f"➽ 𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 𝐁𝐲 ✦ `𝙎𝘼𝙄𝙉𝙄 𝘽𝙊𝙏𝙎🐦`"
+                   Show = f"<pre><code>Video Downloading | {progress:.2f}%</code></pre>\n{name}"
                    prog = await m.reply_text(Show, disable_web_page_preview=True)
                    res_file = await helper.decrypt_and_merge_video(mpd, keys_string, path, name, raw_text2)
                    filename = res_file
@@ -969,18 +933,7 @@ async def account_login(bot: Client, m: Message):
                     remaining_links = len(links) - count
                     progress = (count / len(links)) * 100
                     emoji_message = await show_random_emojis(message)
-                    Show = f"🚀𝐏𝐑𝐎𝐆𝐑𝐄𝐒𝐒 » {progress:.2f}%\n┃\n" \
-                          f"┣🔗𝐈𝐧𝐝𝐞𝐱 » {str(count)}/{len(links)}\n┃\n" \
-                          f"╰━🖇️𝐑𝐞𝐦𝐚𝐢𝐧𝐢𝐧𝐠 𝐋𝐢𝐧𝐤𝐬 » {remaining_links}\n\n" \
-                          f"**⚡Dᴏᴡɴʟᴏᴀᴅ Sᴛᴀʀᴛᴇᴅ...⏳**\n┃\n" \
-                          f'┣💃𝐂𝐫𝐞𝐝𝐢𝐭 » {CR}\n┃\n' \
-                          f'╰━📚𝐁𝐚𝐭𝐜𝐡 𝐍𝐚𝐦𝐞 » `{b_name}`\n\n' \
-                          f"📔𝐓𝐢𝐭𝐥𝐞 » `{name}`\n┃\n" \
-                          f"┣🍁𝐐𝐮𝐚𝐥𝐢𝐭𝐲 » {quality}\n┃\n" \
-                          f'┣━🔗𝐋𝐢𝐧𝐤 » <a href="{url}">__**Click Here to Open Link**__</a>\n┃\n' \
-                          f'╰━━🖼️𝐓𝐡𝐮𝐦𝐛𝐧𝐚𝐢𝐥 » <a href="{raw_text6}">__**Thumb Link**__</a>\n\n' \
-                          f"➽ 𝐔𝐬𝐞 /stop for stop the Bot.\n\n" \
-                          f"➽ 𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 𝐁𝐲 ✦ `𝙎𝘼𝙄𝙉𝙄 𝘽𝙊𝙏𝙎🐦`"
+                    Show = f"<pre><code>Video Downloading | {progress:.2f}%</code></pre>\n{name}"
                     prog = await m.reply_text(Show, disable_web_page_preview=True)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
                     res_file = await helper.download_video(url, cmd, name)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
                     filename = res_file                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
@@ -991,11 +944,8 @@ async def account_login(bot: Client, m: Message):
                     time.sleep(1)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 
             except Exception as e:
-                await m.reply_text(f'——— ✨ [{str(count).zfill(3)}]({link0}) ✨ ———\n\n'
-                                   f'📔 𝐓𝐢𝐭𝐥𝐞 » `{name}`\n\n'
-                                   f'🔗 𝐋𝐢𝐧𝐤 » <a href="{link0}">__**Click Here to check manually**__</a>\n\n'
-                                   f'📚 𝐂𝐨𝐮𝐫𝐬𝐞 » `{b_name}`\n\n'
-                                   f'✦𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 𝐁𝐲 ✦ `🇸‌🇦‌🇮‌🇳‌🇮‌🐦`')
+                await m.reply_text(f'{str(count).zfill(3)} ✨ {name}\n'
+                                   f'🔗 <a href="{link0}">__**Click Here to check manually**__</a>')
                 failed_links.append(f"{name1} : {link0}")
                 count += 1
                 failed_count += 1
@@ -1022,7 +972,7 @@ async def account_login(bot: Client, m: Message):
                        f"▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n"
                        f"🔹𝙵𝚊𝚒𝚕𝚎𝚍 𝙻𝚒𝚗𝚔𝚜 » {failed_count}\n"
                        f"✅𝚂𝚝𝚊𝚝𝚞𝚜 » 𝙲𝚘𝚖𝚙𝚕𝚎𝚝𝚎𝚍`")
-    await m.reply_text("<pre><code>Downloaded By ⌈✨『𝙎𝘼𝙄𝙉𝙄 𝘽𝙊𝙏𝙎』✨⌋</code></pre>")
+    await m.reply_text("<pre><code>Downloaded By ⌈✨『ᴀᴅᴍɪɴ』✨⌋</code></pre>")
 
 
 @bot.on_message(filters.command(["doc"]) )
@@ -1032,7 +982,7 @@ async def txt_handler(bot: Client, m: Message):
     x = await input.download()
     await input.delete(True)
     file_name, ext = os.path.splitext(os.path.basename(x))
-    credit = f"𝙎𝘼𝙄𝙉𝙄 𝘽𝙊𝙏𝙎"
+    credit = f"『ᴀᴅᴍɪɴ』"
     try:    
         with open(x, "r") as f:
             content = f.read()
@@ -1081,9 +1031,9 @@ async def txt_handler(bot: Client, m: Message):
         raw_text3 = '/admin'
 
     # Default credit message
-    credit = "️𝙎𝘼𝙄𝙉𝙄 𝘽𝙊𝙏𝙎 🕊️⁪⁬⁮⁮⁮"
-    if raw_text3 == '/admin':
-        CR = '𝙎𝘼𝙄𝙉𝙄 𝘽𝙊𝙏𝙎 🕊️'
+    credit = "️[『ᴀᴅᴍɪɴ』 🕊️](http://t.me/Devfff_bot)"
+    if raw_text3 == '1':
+        CR = '[『ᴀᴅᴍɪɴ』 🕊️](http://t.me/Devfff_bot)'
     elif raw_text3:
         CR = raw_text3
     else:
@@ -1101,7 +1051,7 @@ async def txt_handler(bot: Client, m: Message):
             url = "https://" + Vxy
 
             name1 = links[i][0].replace("\t", "").replace(":", "").replace("/", "").replace("+", "").replace("#", "").replace("|", "").replace("@", "").replace("*", "").replace(".", "").replace("https", "").replace("http", "").strip()
-            name = f'{name1[:60]} 𝙎𝘼𝙄𝙉𝙄 𝘽𝙊𝙏𝙎'
+            name = f'{name1[:60]} 『ᴀᴅᴍɪɴ』'
 
             try:  
                 cc1 = f'**[📕]Pdf Id  ➠** {str(count).zfill(3)}\n**[📁]Tᴏᴘɪᴄ ➠** `{name1} .pdf`\n\n<pre><code>**📚 Course ➠** {b_name}</code></pre>\n\n** 🌟 Extracted By : {CR}**'                 
