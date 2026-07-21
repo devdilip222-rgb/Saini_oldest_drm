@@ -770,7 +770,8 @@ async def account_login(bot: Client, m: Message):
                         time.sleep(1)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
                     except FloodWait as e:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
                         await m.reply_text(str(e))                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
-                        time.sleep(e.x)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+                        await asyncio.sleep(e.value)
+                        count += 1
                         continue 
                       
                 elif ".zip" in url:
@@ -783,7 +784,7 @@ async def account_login(bot: Client, m: Message):
                         os.remove(f'{name}.zip')
                     except FloodWait as e:
                         await m.reply_text(str(e))
-                        time.sleep(e.x)
+                        await asyncio.sleep(e.value)
                         count += 1
                         pass
 
@@ -797,7 +798,7 @@ async def account_login(bot: Client, m: Message):
                         os.remove(pdf_enc)
                     except FloodWait as e:
                         await m.reply_text(str(e))
-                        time.sleep(e.x)
+                        await asyncio.sleep(e.value)
                         count += 1
                         pass
                   
@@ -818,7 +819,7 @@ async def account_login(bot: Client, m: Message):
                             await m.reply_text(f"Failed to download PDF: {response.status_code} {response.reason}")
                     except FloodWait as e:
                         await m.reply_text(str(e))
-                        time.sleep(e.x)
+                        await asyncio.sleep(e.value)
                         count += 1
                         continue
                         
@@ -834,7 +835,8 @@ async def account_login(bot: Client, m: Message):
                         os.remove(f'{name}.{ext}')
                     except FloodWait as e:
                         await m.reply_text(str(e))
-                        time.sleep(e.x)
+                        await asyncio.sleep(e.value)
+                        count += 1
                         continue
 
                 elif any(img in url.lower() for img in ['.jpeg', '.png', '.jpg']):
@@ -854,10 +856,11 @@ async def account_login(bot: Client, m: Message):
                 elif "youtu" in url:
                     try:
                         await bot.send_photo(chat_id=m.chat.id, photo=photoyt, caption=ccyt)
-                        count += 1
-                    except Exception as e:
+                        count += 1 
+                    except FloodWait as e:
                         await m.reply_text(str(e))
                         await asyncio.sleep(1)
+                        count += 1
                         continue
                     
                 elif ".ws" in url and  url.endswith(".ws"):
@@ -869,8 +872,9 @@ async def account_login(bot: Client, m: Message):
                             count += 1
                             time.sleep(5)
                         except FloodWait as e:
-                            await asyncio.sleep(e.x)
+                            await asyncio.sleep(e.value)
                             await m.reply_text(str(e))
+                            count += 1
                             continue
                           
                 elif 'encrypted.m' in url:
@@ -917,6 +921,11 @@ async def account_login(bot: Client, m: Message):
                     count += 1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
                     time.sleep(1)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 
+            except FloodWait as e:
+                await asyncio.sleep(e.value)
+                await m.reply_text(str(e))
+                count += 1
+                continue
             except Exception as e:
                 await m.reply_text(f'{str(count).zfill(3)} ✨ {name}\n🔗 <a href="{link0}">__**Click Here to check manually**__</a>')
                 failed_links.append(f"{name1} : {link0}")
@@ -938,14 +947,15 @@ async def account_login(bot: Client, m: Message):
      await error_file_send.delete()
      failed_links.clear()
      os.remove(f'failed_downloads.txt')
-    await m.reply_text(f"`✨𝙱𝚊𝚝𝚌𝚑 𝚂𝚞𝚖𝚖𝚊𝚛𝚢✨\n"
+    await m.reply_text(f"✨**Batch Summary**✨\n"
                        f"▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n"
-                       f"🔢𝙸𝚗𝚍𝚎𝚡 𝚁𝚊𝚗𝚐𝚎 » ({raw_text} to {len(links)})\n"
-                       f"📚𝙱𝚊𝚝𝚌𝚑 𝙽𝚊𝚖𝚎 » {b_name}\n"
+                       f"🔢**Index:** {raw_text}-{len(links)}\n"
+                       f"📚**Batch:** {b_name}\n"
                        f"▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n"
-                       f"🔹𝙵𝚊𝚒𝚕𝚎𝚍 𝙻𝚒𝚗𝚔𝚜 » {failed_count}\n"
-                       f"✅𝚂𝚝𝚊𝚝𝚞𝚜 » 𝙲𝚘𝚖𝚙𝚕𝚎𝚝𝚎𝚍`")
-    await m.reply_text("<pre><code>Downloaded By ⌈✨『ᴀᴅᴍɪɴ』✨⌋</code></pre>")
+                       f"**Failed** » {failed_count}\n"
+                       f"✅**Status:** Completed\n"
+                       f"▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n"
+                       f"**Downloaded By:** ✨{CR}✨")
 
 
 @bot.on_message(filters.command(["doc"]) )
