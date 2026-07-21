@@ -364,7 +364,7 @@ async def download_and_decrypt_pdf(url, name, key):
 
 #-----------------------Emoji handler------------------------------------
 
-EMOJIS = ["🔥", "💥", "👱🏻", "👻", "⚡", "💫", "🐟", "🦅", "🌹", "🦋"]
+EMOJIS = ["🔥", "💥", "⚡", "💫", "🐟", "🌹", "🦋"]
 emoji_counter = 0  # Initialize a global counter
 
 def get_next_emoji():
